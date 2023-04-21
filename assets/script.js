@@ -38,10 +38,62 @@ function generatePassword() {
     var numbers;
     var specialChar;
 
-    passwordLegth = 0;
-    pwdCriteria.pwdLegth = 0;
+    passwordLength = 0;
+    pwdCriteria.pwdLength = 0;
     result = "";
 
+while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("How many characters do you want your password to be? \nPassword must be between 8 and 128 characters.");
+
+    if (passwordLength === null) {
+        return "Your Secure Password";
+    }
+    else {
+        if (!isFinite(passwordLength)) {
+            alert("You did not enter a number");
+            return "Your Secure Password";
+        }
+        else {
+            if (passwordLength < 8 || passwordLength > 128 ) {
+                alert ("Password must be bewtween 8 and 128 characters.");
+                return "Your Secure Password";
+            }
+        else {
+
+            showPrompts();
+
+            while (pwdCriteria.pwdLength < passwordLength) {
+
+                if (lowerCase === false && upperCase === falso && numbers === false && specialChar === false) {
+                    alert("You must select at least one criteria of lowercase, uppercase, numbers or special characters")
+              showPrompts();
+                }
+
+                else {
+
+                    if (lowerCase === true && pwdCriteria.pwdLength < passwordLength) {
+                        var lc = pwdCriteria.pwdLowerCase[Math.floor(Math.random() * 26)]
+                        result = result + lc;
+                        pwdCriteria.pwdLength;
+                    }
+
+                    if (specialChar === true && pwdCriteria.pwdLength < passwordLength) {
+                        var sc = pwdCriteria.pwdCharacter[Math.floor(Math.random() * 32)]
+                        result = result + sc;
+                        pwdCriteria.pwdLength++;
+
+                    }
+
+                    if (numbers === true && pwdCriteria.pwdLength < passwordLength) {
+                        var num = pwdCriteria.pwdNumber[Math.floor(Math.random() * 10)]
+                        result = result + num;
+                        pwdCriteria.pwdLength++;
+                    }
+                }
+            }
+        }
+    }
+ }
     
-}
+    }
 
