@@ -17,3 +17,31 @@ var pwdCriteria = {
 
 }
 
+function writePassword() {
+
+    var password = generatePassword();
+
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+}
+
+generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+
+    var result = "";
+
+    var passwordLength = 0;
+    var upperCase;
+    var lowerCase;
+    var numbers;
+    var specialChar;
+
+    passwordLegth = 0;
+    pwdCriteria.pwdLegth = 0;
+    result = "";
+
+    
+}
+
