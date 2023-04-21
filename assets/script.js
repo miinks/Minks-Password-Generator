@@ -94,6 +94,15 @@ while (passwordLength < 8 || passwordLength > 128) {
         }
     }
  }
-    
+    return result;
+
+    function showPrompts() {
+        lowerCase = confirm("Do you want to use lowercase letters?");
+        upperCase = confirm("Do you want to use upper case letters?");
+        numbers = confirm("Do you want to use numbers?");
+        specialChar = confirm("Do you want to use any special characters?");
+        
+        }
     }
+ }
 
